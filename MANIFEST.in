@@ -1,0 +1,4 @@
+include pyjukebox/schema.sql
+graft pyjukebox/static
+graft pyjukebox/templates
+global-exclude *.pyc
