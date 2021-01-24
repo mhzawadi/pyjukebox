@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-
+from BrowserModel import Jukebox
 
 def create_app(test_config=None):
     # create and configure the app
@@ -25,6 +25,9 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def hello():
-        return 'Hello, World!'
+        # get all the songs
+        songs = Jukebox.getALL()
+        # show the user the list
+        return view.showAll(songs)
 
     return app
